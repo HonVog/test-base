@@ -6,12 +6,36 @@ export default {
     components: {},
     data() {
         return {
-            request: '',
-            brend: '',
+            activBtn: '',
+            activLinc: 'Ролик режущий на нож Tapco',
         }
+    },
+    methods: {
+        checElementLinc(checet) {
+            return this.activLinc === checet;
+        },
+
+        checElementBtn(checet) {
+            return this.activBtn === checet;
+        },
+
+        newActivLinc(value) {
+            this.activLinc = value;
+        },
+
+        newActivBtn(value) {
+            this.activBtn = value;
+        }
+
+
     }
+
 }
+
 </script>
+
+
+
 
 
 

@@ -1,3 +1,12 @@
+//Mode: Tablet
+@tablet: 768px;
+@tablet-area: 750px;
+
+// Mode: Desktop
+@desktop: 1160px;
+@desktop-area: 970px;
+
+
 .testHed {
     &__wraper {
         position: relative;
@@ -6,17 +15,47 @@
         background-position: 0 -13px;
         background-repeat: repeat-x;
         height: 128px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @media (max-width: @tablet-area) {
+            top: 0;
+            left: 0;
+            width: 100vw;
+            flex-direction: column;
+            height: 20rem;
+        }
     }
 
     &__heder {
         top: 0;
         background: none;
-        width: 1160px;
-        position: relative;
+        max-width: @desktop;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @media (max-width: @desktop-area) {
+            margin: 1%;
+            width: 100vw;
+        }
+
+        @media (max-width: @tablet-area) {
+            top: 0;
+            left: 0;
+            flex-direction: column;
+        }
+
 
         &-label {
             width: 100px;
             height: 100px;
+
+            @media (max-width: @desktop-area) {
+                width: 70px;
+                height: 70px;
+            }
 
             img {
                 width: 100%;
@@ -27,25 +66,76 @@
         &-linc {
             font-size: 20px;
 
+            @media (max-width: @desktop-area) {
+                flex-direction: column;
+                font-size: 10px;
+            }
+
+            @media (max-width: @tablet-area) {
+                flex-direction: column;
+            }
+
             div {
                 margin-left: 15px;
 
+                @media (max-width: @desktop-area) {
+                    margin: 1%;
+                }
+
+                @media (max-width: @tablet-area) {
+                    margin: 0;
+                }
+
                 &:hover {
                     font-size: 24px;
+
+                    @media (max-width: @desktop-area) {
+                        font-size: 16px;
+                    }
                 }
 
                 i {
                     font-size: 10px;
+
+                    @media (max-width: @desktop-area) {
+                        font-size: 5px;
+                    }
                 }
             }
         }
 
         &-phone {
             font-size: 1.5rem;
+
+            @media (max-width: @desktop-area) {
+                font-size: 10px;
+            }
         }
 
         &-fut {
             width: 1160px;
+
+            @media (max-width: @desktop-area) {
+                margin: 1%;
+                width: 100vw;
+            }
+
+            @media (max-width: @tablet-area) {
+                margin-top: 1%;
+                width: 100vw;
+            }
+
+            ol {
+                @media (max-width: @desktop-area) {
+                    margin: 1%;
+                    flex-direction: column;
+                }
+
+                @media (max-width: @tablet-area) {
+                    margin: 1%;
+                    flex-direction: column;
+                }
+            }
 
             li {
                 list-style: none;
@@ -72,4 +162,8 @@
     background-color: #DBA42C;
     color: black;
     margin-left: 50px;
+}
+
+.activLinc {
+    color: #DBA42C;
 }

@@ -1,25 +1,103 @@
+//Mode: Tablet
+@tablet: 768px;
+@tablet-area: 750px;
+
+// Mode: Desktop
+@desktop: 1160px;
+@desktop-area: 970px;
+
 .bodySelector {
-    &__wraper {}
+    &__wraper {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
 
     &__body {
-        width: 1160px;
+        max-width: @desktop;
+        height: 100%;
+
+        @media (max-width: @desktop-area) {
+            margin: 1%;
+            width: 99%;
+        }
+
+        @media (max-width: @tablet-area) {
+            flex-direction: column;
+            width: 100vw;
+        }
 
         &-tovar {
             height: 637px;
+
+            @media (max-width: @desktop-area) {
+                height: auto;
+            }
+
+            @media (max-width: @tablet-area) {
+                flex-direction: column;
+                height: auto;
+            }
         }
 
         &-text {
             font-size: 22px;
 
+            @media (max-width: @desktop-area) {
+                font-size: 10px;
+            }
 
             &-linc {
                 margin-top: 100px;
+
+                @media (max-width: @desktop-area) {
+                    margin-top: 50px;
+                }
+
+                @media (max-width: @tablet-area) {
+                    justify-content: space-around;
+                }
             }
 
             &-description {
                 margin-top: 37px;
                 color: white;
                 font-size: 20px;
+
+                @media (max-width: @desktop-area) {
+                    margin-top: 27px;
+                    font-size: 10px;
+                }
+
+                @media (max-width: @tablet-area) {
+                    font-size: 16px;
+                    padding: 2%;
+                }
+            }
+        }
+
+        &-dopTovar {
+            &-tovar {
+                @media (max-width: @tablet-area) {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                ol {
+                    @media (max-width: @tablet-area) {
+                        display: flex;
+                        flex-direction: column;
+                    }
+
+                    li {
+                        @media (max-width: @tablet-area) {
+                            align-items: center;
+                            justify-content: center;
+                            margin-top: 10px;
+                        }
+                    }
+                }
             }
         }
     }
@@ -27,15 +105,30 @@
 
 .linc {
     margin-right: 50px;
-    color: white;
-    border-bottom: 2px solid #DBA42C;
+    color: #808080;
     font-size: 22px;
+
+    @media (max-width: @desktop-area) {
+        font-size: 16px;
+        margin-right: 1%;
+    }
+
+    @media (max-width: @tablet-area) {
+        margin-right: 1%;
+    }
 
     &:hover {
         font-size: 25px;
+
+    }
+
+    &-activ {
+        color: white;
         border-bottom: 4px solid #DBA42C;
     }
 }
+
+
 
 .tovar {
     &__img {
@@ -43,12 +136,31 @@
         width: 550px;
         margin-right: 60px;
 
+        @media (max-width: @desktop-area) {
+            height: auto;
+            width: 90%;
+            margin: 1%;
+        }
+
+        @media (max-width: @tablet-area) {
+            display: flex;
+            width: 100vw;
+            flex-direction: column;
+            height: auto;
+            margin: 0;
+        }
+
+
         &-icon {
             color: white;
             font-size: 8px;
             margin-top: 25px;
             margin-right: 15px;
             margin-bottom: 25px;
+
+            @media (max-width: @tablet-area) {
+                font-size: 20px;
+            }
 
             &:hover {
                 font-size: 1.1rem;
@@ -65,6 +177,16 @@
             height: 54px;
             margin-bottom: 30px;
 
+            @media (max-width: @desktop-area) {
+                font-size: 20px;
+                height: auto;
+                margin: 1%;
+            }
+
+            @media (max-width: @tablet-area) {
+                margin: 1%;
+            }
+
         }
 
         ol>li {
@@ -78,6 +200,22 @@
         &-value {
             color: #FFFFFF;
             margin-left: 10px;
+        }
+
+        &-btn {
+            color: white;
+            background-color: #DBA42C;
+            width: 177px;
+            height: 50px;
+            margin-top: 50px;
+            font-size: 20px;
+
+            &:hover {
+                width: 180px;
+                height: 52px;
+                font-size: 21px;
+                background-color: #eeb02a;
+            }
         }
     }
 }
@@ -120,6 +258,7 @@
     background: #DBA42C;
     border-radius: 10px;
     width: 128px;
+    height: 50px;
     margin-right: 10px;
 
     &:hover {
@@ -135,4 +274,8 @@
     &:hover {
         width: 42%;
     }
+}
+
+.actib-el {
+    color: #DBA42C;
 }

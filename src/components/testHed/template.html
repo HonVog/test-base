@@ -1,16 +1,19 @@
-<div class="testHed__wraper full-width flex flex-column flex-item-center">
-    <div class="testHed__heder full-width flex flex-justify-between flex-item-center">
+<div class="testHed__wraper full-width">
+    <div class="testHed__heder full-width">
         <div class="testHed__heder-label">
             <img src="../../assets/imges/hed-icon.png" alt="Иконка не загрузилась">
         </div>
         <div class="testHed__heder-linc flex">
-            <div class="cursor-pointer font-border">
+            <div class="cursor-pointer font-border" :class="{'activLinc': checElementBtn('Листогибы') }"
+                @click="newActivBtn('Листогибы')">
                 <pre>Листогибы <i class="bi bi-caret-down-fill"></i></pre>
             </div>
-            <div class="cursor-pointer font-border">
+            <div class="cursor-pointer font-border" :class="{'activLinc': checElementBtn('Запчасти для листогибов') }"
+                @click="newActivBtn('Запчасти для листогибов')">
                 <pre>Запчасти для листогибов <i class="bi bi-caret-down-fill"></i></pre>
             </div>
-            <div class="cursor-pointer font-border">
+            <div class="cursor-pointer font-border" :class="{'activLinc': checElementBtn('О компании') }"
+                @click="newActivBtn('О компании')">
                 <pre> О компании <i class="bi bi-caret-down-fill"></i></pre>
             </div>
         </div>
@@ -24,19 +27,24 @@
     <div class="testHed__heder-fut full-width">
         <ol class="flex flex-justify-start">
             <li class="linc">
-                <span class="cursor-pointer">Главная</span>
+                <span class="cursor-pointer" :class="{'activLinc': checElementLinc('Главная') }"
+                    @click="newActivLinc('Главная')">Главная</span>
                 <span class="testHed__heder-fut_activ">/</span>
             </li>
             <li class="linc">
-                <span class="cursor-pointer">Запчасти</span>
+                <span class="cursor-pointer" :class="{ 'activLinc': checElementLinc('Запчасти') }"
+                    @click="newActivLinc('Запчасти')">Запчасти</span>
                 <span class="testHed__heder-fut_activ">/</span>
             </li>
             <li>
-                <span class="cursor-pointer">Запчасти Тарсо</span>
+                <span class="cursor-pointer" :class="{ 'activLinc': checElementLinc('Запчасти Тарсо') }"
+                    @click="newActivLinc('Запчасти Тарсо')">Запчасти
+                    Тарсо</span>
                 <span class="testHed__heder-fut_activ">/</span>
             </li>
             <li class="linc">
-                <span class="cursor-pointer">Ролик режущий на нож Tapco</span>
+                <span class="cursor-pointer" :class="{ 'activLinc': checElementLinc('Ролик режущий на нож Tapco') }"
+                    @click="newActivLinc('Ролик режущий на нож Tapco')">Ролик режущий на нож Tapco</span>
                 <span class="testHed__heder-fut_activ">/</span>
             </li>
         </ol>

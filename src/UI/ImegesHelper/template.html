@@ -1,0 +1,12 @@
+<div class="full-size flex flex-center">
+    <svg v-if=" (!this.typeUrl || this.typeUrl == 'img')"
+        width="100%" height="100%">
+        <title>{{titelUrl ? titelUrl : baseTitel}}</title>
+        <image :href="url" height="100%" width="100%" preserveAspectRatio="none" />
+     </svg>
+     <div v-if="(typeUrl == 'text')"
+        class="full-size flex flex-center"
+     >
+        {{baseUrl}}
+    </div>   
+</div>
